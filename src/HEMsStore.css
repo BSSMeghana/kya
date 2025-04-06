@@ -1,0 +1,144 @@
+/* HEMsStore.css */
+.hems-store-page {
+  padding: 2rem 1rem;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Store Header Styles */
+.store-title {
+  font-size: 2.5rem;
+  color: #2b7a45;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.store-subtitle {
+  font-size: 1.2rem;
+  color: #43a047;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+/* Section Styles */
+.store-section {
+  margin-bottom: 3rem;
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: #1b5e20;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8f5e9;
+  display: flex;
+  align-items: center;
+}
+
+.section-title::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 24px;
+  background-color: #4caf50;
+  margin-right: 12px;
+  border-radius: 4px;
+}
+
+/* Category Group Styles */
+.category-group {
+  margin-bottom: 2.5rem;
+}
+
+.category-title {
+  font-size: 1.4rem;
+  color: #204d22;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  
+}
+
+/* Product Grid Styles */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .store-title {
+    font-size: 2rem;
+  }
+  
+  .store-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hems-store-page {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .store-section {
+    padding: 1rem;
+  }
+  
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+  
+  .category-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Special Flower Category Styling */
+.store-section:first-child {
+  background-color: #fce4ec;
+  border: 1px solid #f8bbd0;
+}
+
+.store-section:first-child .section-title {
+  color: #ad1457;
+  border-bottom-color: #f8bbd0;
+}
+
+.store-section:first-child .section-title::before {
+  background-color: #e91e63;
+}
+
+.store-section:first-child .category-title {
+  color: #c2185b;
+  border-left-color: #f06292;
+}

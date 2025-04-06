@@ -31,16 +31,15 @@ const Header = ({ setPage }) => {
         <div className="dropdown">
           <button className="nav-link">Stores ▼</button>
           <div className="dropdown-menu">
-            <button className="dropdown-item" onClick={() => setPage("fruit-store")}>
-              Fruit store
+            <button className="dropdown-item" onClick={() => setPage("HEMs-store")}>
+              HEM's Store
             </button>
-            <button className="dropdown-item" onClick={() => setPage("flower-store")}>
-              Flower store
+            <button className="dropdown-item" onClick={() => setPage("NAGs-store")}>
+              NAG's Store
             </button>
-            <button className="dropdown-item">Grocery store</button>
-            <button className="dropdown-item">Vegetable store</button>
-            <button className="dropdown-item">Petcare store</button>
-            <button className="dropdown-item">Babycare store</button>
+            <button className="dropdown-item" onClick={() => setPage("MEGs-store")}>
+              MEG's Store
+            </button>
           </div>
         </div>
 
