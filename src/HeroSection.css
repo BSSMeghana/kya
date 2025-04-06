@@ -1,0 +1,99 @@
+
+/* Swiper */
+.hero-swiper {
+    width: 100%;
+}
+
+/* Hero Slide */
+.hero-slide {
+    width: 100%;
+}
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center; /* Centers the hero-content horizontally */
+    padding: 40px 20px;
+    background-color: white;
+  }
+  
+  /* Flexbox container to position text on the left and image on the right */
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1300px;
+    gap: 100px; /* Space between text and image */
+  }
+  
+  /* Wraps text for better control */
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+  }
+  
+  /* Heading styles */
+  .hero h1 {
+    font-size: 3rem;
+    font-family: 'Cooper BT', serif;
+    font-weight: bold;
+    color: #222;
+    line-height: 1.2;
+    text-align: left;
+  }
+  
+  /* Paragraph styles */
+  .hero p {
+    font-size: 1.2rem;
+    font-family: 'Cooper BT', serif;
+    color: #272525;
+    margin-top: 10px; /* Adds space between h1 and p */
+    line-height: 1.5;
+  }
+  .right-image img {
+    max-width: 700px;
+    height: 550px;
+    object-fit: cover;
+  }
+  
+  /* Second Slide (Image Only) */
+  .image-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 40px 20px;
+    height: auto;
+}
+  
+  /* Wrap image in a container like Slide 1's hero-content */
+  .image-slide .image-container {
+    width: 100%;
+    height: 100%;
+    max-width: 1300px; /* Optional: to match hero-content max-width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  /* Keep image size consistent with Slide 1 */
+  .image-slide img {
+    width: 100%;
+    height: 100%;
+    max-height: 550px; /* Adjust this based on desired height */
+    object-fit: cover;
+}
+
+/* Swiper Controls */
+.swiper-button-prev,
+.swiper-button-next {
+    color: #333 !important;
+}
+
+.swiper-pagination-bullet {
+    background-color: #333 !important;
+}
+

@@ -1,0 +1,26 @@
+.notification-stack {
+    background-color: #fefcbf; /* Tailwind's yellow-50 */
+    padding: 1.5rem 1rem;
+  }
+  
+  .notification-stack h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #b7791f; /* Tailwind's yellow-800 */
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .notification-grid {
+    display: grid;
+    gap: 1rem;
+    max-width: 96rem;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    .notification-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  

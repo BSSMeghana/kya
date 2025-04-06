@@ -1,0 +1,87 @@
+.notification-card {
+    background: linear-gradient(to bottom right, #ffffff, #f9fafb);
+    border-left-width: 4px;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .notification-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notification-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .notification-icon {
+    font-size: 1.5rem;
+  }
+  
+  .notification-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+  
+  .scrolling-text-wrapper {
+    height: 2rem;
+    overflow: hidden;
+    margin-top: 0.25rem;
+    position: relative;
+  }
+  
+  .scrolling-text {
+    animation: scrollUp 6s linear infinite;
+    position: absolute;
+  }
+  
+  .notification-message {
+    font-size: 0.9rem;
+    color: #374151; /* gray-700 */
+  }
+  
+  @keyframes scrollUp {
+    0% {
+      transform: translateY(100%);
+    }
+    10% {
+      transform: translateY(0%);
+    }
+    90% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  
+  .notification-time {
+    font-size: 0.75rem;
+    color: #9ca3af; /* gray-400 */
+    text-align: right;
+    margin-top: 0.5rem;
+  }
+  
+  /* Border colors */
+  .border-green {
+    border-left-color: #34d399; /* emerald-400 */
+  }
+  
+  .border-pink {
+    border-left-color: #f472b6; /* pink-400 */
+  }
+  
+  .border-blue {
+    border-left-color: #60a5fa; /* blue-400 */
+  }
+  
