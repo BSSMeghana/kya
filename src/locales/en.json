@@ -1,0 +1,43 @@
+{
+    "selectLanguage": "Please select your language",
+    "home": "Home",
+    "stores": "Stores",
+    "account": "Account",
+    "login": "Login",
+    "employeeLogin": "Employee Login",
+    "HEMsStore": "HEM's Store",
+    "NAGsStore": "NAG's Store",
+    "MEGsStore": "MEG's Store",
+  
+    "notifications": {
+      "title": "Store Notifications",
+      "hem": {
+        "title": "HEM's Store",
+        "message": "Fresh Fuji Apples and Alphonso Mangoes just arrived! 10% off on seasonal fruits this week.\nThere's a 20% off on all fruit baskets."
+      },
+      "nag": {
+        "title": "NAG's Store",
+        "message": "Stock Alert! Premium Basmati Rice now available. Plus, 15% off on whole grains.\nDon't miss out on our special offer!"
+      },
+      "meg": {
+        "title": "MEG's Store",
+        "message": "Fresh organic veggies restocked. Get your greens now! 🥬🥕.\nHave a good day!"
+      }
+    },
+  "freshProducts": {
+  "title": "Best Fresh Products",
+  "off": "OFF",
+  "inStock": "In Stock",
+  "lowStock": "Low Stock",
+  "soldOut": "Sold Out",
+  "mrp": "MRP",
+  "hurryUp": "Hurry up!",
+  "items": {
+    "Watermelon": "Watermelon",
+    "Cucumber - Seedless": "Cucumber - Seedless",
+    "Pear - Packham": "Pear - Packham",
+    "Banana - Regular": "Banana - Regular"
+  }
+}
+}
+  

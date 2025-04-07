@@ -1,6 +1,7 @@
 import React from "react";
-import "./HEMsStore.css";
+import { useTranslation } from "react-i18next";
 import HEMsCard from "./HEMsCard";
+import "./HEMsStore.css";
 
 const categories = { 
   "Fresh Flowers": {
@@ -159,30 +160,32 @@ const categories = {
 };
 
 const HEMsStore = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="hems-store-page">
-      <h1 className="store-title">🛒 Welcome to HEM's Grocery</h1>
-      <p className="store-subtitle">Fresh Products, Everyday Discounts!</p>
+      <h1 className="store-title">🛒 {t('Welcome to HEMs Grocery')}</h1>
+      <p className="store-subtitle">{t('Fresh Products, Everyday Discounts!')}</p>
 
       {Object.entries(categories).map(([sectionTitle, categoryGroups]) => (
         <section key={sectionTitle} className="store-section">
-          <h2 className="section-title">{sectionTitle}</h2>
+          <h2 className="section-title">{t(`${sectionTitle}`)}</h2>
           {Object.entries(categoryGroups).map(([category, items]) => (
             <div key={category} className="category-group">
-              <h3 className="category-title">{category}</h3>
+              <h3 className="category-title">{t(`${category}`)}</h3>
               <div className="product-grid">
                 {items.map((item, index) => (
-                  <HEMsCard 
-                    key={`${category}-${index}`} 
-                    name={item.name}
-                    image={item.image}
-                    price={item.price}
-                    mrp={item.mrp}
-                    discount={item.discount}
-                    stockStatus={item.stockStatus}
-                    availability={item.availability}
-                    quantityLeft={item.quantityLeft}
-                  />
+                  <HEMsCard
+                  key={`${category}-${index}`}
+                  name={t(`products.${item.name}`, item.name)} // fallback to item.name if no translation
+                  image={item.image}
+                  price={item.price}
+                  mrp={item.mrp}
+                  discount={item.discount}
+                  stockStatus={item.stockStatus}
+                  availability={item.availability}
+                  quantityLeft={item.quantityLeft}
+                />
                 ))}
               </div>
             </div>

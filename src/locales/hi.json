@@ -1,0 +1,126 @@
+{
+    "selectLanguage": "कृपया अपनी भाषा चुनें",
+    "home": "होम",
+    "stores": "स्टोर",
+    "account": "अकाउंट",
+    "login": "लॉगिन",
+    "employeeLogin": "कर्मचारी लॉगिन",
+    "HEMsStore": "HEM'sस्टोर",
+    "NAGsStore": "NAG'sस्टोर",
+    "MEGsStore": "MEG की स्टोर",
+    
+    "notifications": {
+      "title": "स्टोर सूचनाएं",
+      "hem": {
+        "title": "HEMs Store",
+        "message": "ताज़े फूजी सेब और अल्फांसो आम आ गए हैं! इस सप्ताह मौसमी फलों पर 10% की छूट।\nसभी फल टोकरियों पर 20% की छूट है।"
+      },
+      "nag": {
+        "title": "NAGs Store",
+        "message": "स्टॉक अलर्ट! प्रीमियम बासमती चावल अब उपलब्ध है। संपूर्ण अनाज पर 15% की छूट।\nहमारे विशेष ऑफर को मिस न करें!"
+      },
+      "meg": {
+        "title": "MEGs Store",
+        "message": "ताज़ी ऑर्गेनिक सब्जियाँ फिर से स्टॉक में हैं। अपनी ग्रीन्स अभी प्राप्त करें! 🥬🥕।\nआपका दिन शुभ हो!"
+      }
+    },
+    
+    "freshProducts": {
+      "title": "सबसे अच्छे ताज़ा उत्पाद",
+      "off": "छूट",
+      "inStock": "स्टॉक में",
+      "lowStock": "कम स्टॉक",
+      "soldOut": "स्टॉक खत्म",
+      "mrp": "अधिकतम मूल्य",
+      "hurryUp": "जल्दी करें!",
+      "items": {
+        "Watermelon": "तरबूज",
+        "Cucumber - Seedless": "खीरा - बिना बीज",
+        "Pear - Packham": "नाशपाती - पैकहम",
+        "Banana - Regular": "केला - सामान्य"
+      }
+    },
+    
+    "store": {
+    "welcome": "HEM के स्टोर में आपका स्वागत है!",
+    "subtitle": "ताजे उत्पाद, शानदार छूट, और विश्वसनीय स्टॉक जानकारी",
+    "sections": {
+      "Fresh Flowers": "ताजे फूल",
+      "Fresh Fruits": "ताजे फल",
+      "Dairy & Eggs": "डेयरी और अंडे",
+      "Vegetables": "सब्जियाँ",
+      "Grocery": "किराना",
+      "Ready to Eat": "तत्काल खाने योग्य",
+      "Meat & Seafood": "मांस और समुद्री भोजन",
+      "Bakery & Bread": "बेकरी और ब्रेड",
+      "Canned & Packaged Goods": "डिब्बाबंद और पैक किए गए सामान",
+      "Snacks & Sweets": "नाश्ते और मिठाइयाँ",
+      "Beverages": "पेय पदार्थ",
+      "Pantry Staples": "रसोई के आवश्यक सामान",
+      "Household & Cleaning": "घरेलू और सफाई उत्पाद"
+    }
+  },
+  "products": {
+    "Rose Bouquet": "गुलाब का गुलदस्ता",
+    "Marigold Garland": "गेंदे की माला",
+    "Tulips": "ट्यूलिप फूल",
+    "Banana": "केला",
+    "Apple": "सेब",
+    "Mango": "आम",
+    "Papaya": "पपीता",
+    "Watermelon": "तरबूज",
+    "Milk": "दूध",
+    "Curd": "दही",
+    "Cheese": "पनीर",
+    "Eggs (6 pack)": "अंडे (6 का पैक)",
+    "Spinach": "पालक",
+    "Carrot": "गाजर",
+    "Potato": "आलू",
+    "Onion": "प्याज",
+    "Basmati Rice": "बासमती चावल",
+    "Toor Dal": "तूर दाल",
+    "Salt": "नमक",
+    "Sugar": "चीनी",
+    "Ready Veg Biryani": "तैयार वेज बिरयानी",
+    "Paneer Butter Masala (Ready)": "तैयार पनीर बटर मसाला",
+    "Chicken Curry (Ready)": "तैयार चिकन करी",
+    "Mutton Keema (Ready)": "तैयार मटन कीमा",
+    "Chicken Breast": "चिकन ब्रेस्ट",
+    "Rohu Fish": "रोहु मछली",
+    "Prawns": "झींगे",
+    "Mutton Curry Cut": "मटन करी कट",
+    "White Bread": "सादा ब्रेड",
+    "Multigrain Bread": "मल्टीग्रेन ब्रेड",
+    "Brown Bread": "ब्राउन ब्रेड",
+    "Pav Buns": "पाव बन",
+    "Canned Beans": "डिब्बाबंद बीन्स",
+    "Tomato Puree": "टमाटर प्यूरी",
+    "Sweet Corn Can": "स्वीट कॉर्न कैन",
+    "Baked Beans": "बेक्ड बीन्स",
+    "Potato Chips": "आलू के चिप्स",
+    "Chocolate Bar": "चॉकलेट बार",
+    "Mixture Namkeen": "मिक्सचर नमकीन",
+    "Cookies": "कुकीज़",
+    "Soft Drink": "सॉफ्ट ड्रिंक",
+    "Juice Pack": "जूस पैक",
+    "Mineral Water": "मिनरल वाटर",
+    "Buttermilk": "छाछ",
+    "Wheat Flour": "गेहूं का आटा",
+    "Cooking Oil": "खाना पकाने का तेल",
+    "Ghee": "घी",
+    "Spices Combo": "मसालों का कॉम्बो",
+    "Dish Soap": "बर्तन धोने का साबुन",
+    "Toilet Cleaner": "टॉयलेट क्लीनर",
+    "Floor Cleaner": "फ्लोर क्लीनर",
+    "Detergent Powder": "वॉशिंग पाउडर"
+  },
+
+    
+    "product": {
+      "unit": "1 यूनिट",
+      "lowStock": "स्टॉक सीमित है",
+      "off": "छूट",
+      "outOfStock": "स्टॉक ख़त्म",
+      "available": "उपलब्ध"
+    }
+  }

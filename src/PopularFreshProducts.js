@@ -1,5 +1,6 @@
 import React from "react";
 import "./PopularFreshProducts.css";
+import { useTranslation } from "react-i18next";
 
 const freshProducts = [
   {
@@ -45,30 +46,30 @@ const freshProducts = [
 ];
 
 const PopularFreshProducts = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="popular-fresh-section">
-      <h2 className="section-title">Best Fresh Products</h2>
+      <h2 className="section-title">{t("freshProducts.title")}</h2>
       <div className="fresh-products-container">
         {freshProducts.map((item, index) => (
           <div className={`product-card-fresh ${item.stockStatus}`} key={index}>
-            <span className="discount-badge">{item.discount} OFF</span>
+            <span className="discount-badge">{item.discount} {t("freshProducts.off")}</span>
             <img src={item.image} alt={item.name} className="product-img" />
             <div className="weight-tag">{item.weight}</div>
-            <p className="product-name">{item.name}</p>
+            <p className="product-name">{t(`freshProducts.items.${item.name}`)}</p>
 
             <div className="stock-status">
-              {item.stockStatus === "in-stock" && <span className="status-label in-stock">In Stock</span>}
-              {item.stockStatus === "low-stock" && <span className="status-label low-stock">Low Stock</span>}
-              {item.stockStatus === "sold-out" && <span className="status-label sold-out">Sold Out</span>}
+              {item.stockStatus === "in-stock" && <span className="status-label in-stock">{t("freshProducts.inStock")}</span>}
+              {item.stockStatus === "low-stock" && <span className="status-label low-stock">{t("freshProducts.lowStock")}</span>}
+              {item.stockStatus === "sold-out" && <span className="status-label sold-out">{t("freshProducts.soldOut")}</span>}
             </div>
 
-            <div className="availability-info">
-              {item.availability}
-            </div>
+            <div className="availability-info">{item.availability}</div>
 
-            <p className="mrp">MRP: <s>Rs {item.mrp}</s></p>
+            <p className="mrp">{t("freshProducts.mrp")}: <s>Rs {item.mrp}</s></p>
             <p className="price">Rs. {item.price}</p>
-            <p className="hurry-text">Hurry up!</p>
+            <p className="hurry-text">{t("freshProducts.hurryUp")}</p>
           </div>
         ))}
       </div>
