@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 
 const categoryOptions = {
@@ -24,6 +24,10 @@ const Dashboard = ({ setCurrentPage }) => {
   const [customCategory, setCustomCategory] = useState('');
   const [selectedProduct, setSelectedProduct] = useState('');
 
+  useEffect(() => {
+    setSection('home'); // Set to home on first mount
+  }, []);
+
   const handleCategoryChange = (e) => {
     const selected = e.target.value;
     setCategory(selected);
@@ -43,13 +47,13 @@ const Dashboard = ({ setCurrentPage }) => {
   return (
     <div className="dashboard-container">
       <div className="dashboard-nav">
-      <button onClick={() => setCurrentPage('home')}>Home</button>
+        <button onClick={() => setCurrentPage('home')}>Home</button>
         <button onClick={() => { setSection('stock'); setStockTab(''); }}>Stock Change</button>
         <button onClick={() => { setSection('billing'); setStockTab(''); }}>Billing</button>
       </div>
 
       <div className="dashboard-content">
-        {section === 'home' && <h2>Welcome to the Store Dashboard</h2>}
+        {section === 'home' && <h2>Welcome to the Store Dashboard!</h2>}
 
         {section === 'stock' && (
           <>
