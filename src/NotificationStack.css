@@ -17,7 +17,7 @@
   }
   
   .notification-stack {
-    height: 500px;
+    height: 400px;
     overflow: hidden;
     position: relative;
   }
@@ -25,7 +25,7 @@
   .notification-scroll {
     display: flex;
     flex-direction: column;
-    animation: scrollUpStack 12s linear infinite;
+    animation: scrollUpStack 11s linear infinite;
   }
   
   @keyframes scrollUpStack {

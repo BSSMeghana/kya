@@ -5,31 +5,35 @@ import "./HEMsCard.css";
 const HEMsCard = ({
   name,
   image,
-  price,
-  mrp,
-  discount,
-  stockStatus,
-  availability,
-  quantityLeft
+  price = 0,
+  mrp = 0,
+  discount = 0,
+  stockStatus = "in-stock",
+  availability = true,
+  quantityLeft = 0
 }) => {
   const { t } = useTranslation();
 
-  const discountValue = typeof discount === "string"
-    ? parseFloat(discount.replace("%", ""))
-    : discount;
+  // Normalize discount
+  const discountValue =
+    typeof discount === "string"
+      ? parseFloat(discount.replace("%", ""))
+      : discount;
 
   const discountedPrice = discountValue
     ? (price * (1 - discountValue / 100)).toFixed(2)
-    : null;
+    : price.toFixed(2);
 
-  const isOutOfStock = stockStatus !== "in-stock" || !availability;
-  const isLowStock = quantityLeft <= 5 && !isOutOfStock;
+  // Normalize and determine stock logic
+  const isOutOfStock = !(stockStatus?.toLowerCase() === "in-stock" && availability);
+
+  const isLowStock = quantityLeft <= 2 && !isOutOfStock;
 
   return (
     <div className={`hems-card ${isOutOfStock ? "out-of-stock" : ""}`}>
-      {discountValue && (
+      {discountValue > 0 && (
         <div className="discount-badge">
-          {discountValue}% {t("product.off")}
+          {discountValue}% {t("off")}
         </div>
       )}
 
@@ -46,17 +50,17 @@ const HEMsCard = ({
       </div>
 
       <div className="product-details">
-        <h3 className="product-name">{name}</h3>
+        <h3 className="product-name">{t(`store.products.${name}`)}</h3>
 
         <div className="product-meta">
-          <span className="product-unit">{t("product.unit")}</span>
+        <span className="product-unit">{`1 ${t("item.unit")}`}</span>
           {isLowStock && (
-            <span className="low-stock-warning">{t("product.lowStock")}</span>
+            <span className="low-stock-warning">{t("item.lowStock")}</span>
           )}
         </div>
 
         <div className="pricing">
-          {discountValue ? (
+          {discountValue > 0 ? (
             <>
               <span className="original-price">₹{mrp.toFixed(2)}</span>
               <span className="current-price">₹{discountedPrice}</span>
@@ -67,13 +71,16 @@ const HEMsCard = ({
         </div>
 
         <div className={`stock-status ${isOutOfStock ? "out" : "in"}`}>
-          {isOutOfStock
-            ? t("product.outOfStock")
-            : <>
-                <span className="stock-indicator" />
-                {quantityLeft} {t("product.available")}
-              </>
-          }
+  {isOutOfStock ? (
+    t("item.outOfStock") // Displays out of stock message
+  ) : (
+    <>
+      <span className="stock-indicator" /> {/* This could be an icon or visual indicator */}
+      {quantityLeft} {t("item.left")} {/* Shows quantity left */}
+    </>
+  )}
+
+
         </div>
       </div>
     </div>

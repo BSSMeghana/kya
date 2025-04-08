@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import './i18n'; // Load translations
 import { useTranslation } from 'react-i18next';
-
+import Footer from './components/Footer';
 import Header from './components/Header';
 import HeroSection from './HeroSection';
-import PopularFreshProducts from './PopularFreshProducts';
 import HEMsStore from './HEMsStore';
 import NotificationStack from './NotificationStack';
 import NAGsStore from './NAGsStore';
 import MEGsStore from './MEGsStore';
 import EmployLogin from './EmployLogin';
 import Dashboard from './Dashboard';
+import NewsFV from './components/NewsFV';
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -51,7 +51,8 @@ function App() {
             <>
               <HeroSection />
               <NotificationStack />
-              <PopularFreshProducts />
+              <NewsFV />
+              
             </>
           )}
           {currentPage === 'HEMs-store' && <HEMsStore />}
@@ -63,6 +64,7 @@ function App() {
 
         </>
       )}
+      <Footer />
     </div>
   );
 }

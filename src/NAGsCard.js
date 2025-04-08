@@ -1,63 +1,66 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./NAGsCard.css";
 
-const NAGsCard = ({ 
-  name, 
-  image, 
-  price, 
-  mrp, 
-  discount, 
-  stockStatus, 
-  availability, 
-  quantityLeft 
+const NAGsCard = ({
+  name,
+  image,
+  price = 0,
+  mrp = 0,
+  discount = 0,
+  stockStatus = "in-stock",
+  availability = true,
+  quantityLeft = 0
 }) => {
-  // Calculate discounted price (handling both "5%" and 5 format)
-  const discountValue = typeof discount === 'string' ? 
-    parseFloat(discount.replace('%', '')) : 
-    discount;
-  const discountedPrice = discountValue ? 
-    (price * (1 - discountValue / 100)).toFixed(2) : 
-    null;
-  
-  const isOutOfStock = stockStatus !== "in-stock" || !availability;
-  const isLowStock = quantityLeft <= 5 && !isOutOfStock;
+  const { t } = useTranslation();
+
+  // Normalize discount
+  const discountValue =
+    typeof discount === "string"
+      ? parseFloat(discount.replace("%", ""))
+      : discount;
+
+  const discountedPrice = discountValue
+    ? (price * (1 - discountValue / 100)).toFixed(2)
+    : price.toFixed(2);
+
+  // Normalize and determine stock logic
+  const isOutOfStock = !(stockStatus?.toLowerCase() === "in-stock" && availability);
+
+  const isLowStock = quantityLeft <= 2 && !isOutOfStock;
 
   return (
-    <div className={`nags-card ${isOutOfStock ? 'out-of-stock' : ''}`}>
-      {/* Discount Badge */}
-      {discountValue && (
+    <div className={`nags-card ${isOutOfStock ? "out-of-stock" : ""}`}>
+      {discountValue > 0 && (
         <div className="discount-badge">
-          {discountValue}% OFF
+          {discountValue}% {t("off")}
         </div>
       )}
 
-      {/* Product Image with fallback */}
       <div className="image-container">
-        <img 
-          src={image} 
-          alt={name} 
+        <img
+          src={image}
+          alt={name}
           className="product-image"
           onError={(e) => {
-            e.target.src = '/images/placeholder-product.png';
-            e.target.className = 'product-image placeholder';
+            e.target.src = "/images/placeholder-product.png";
+            e.target.className = "product-image placeholder";
           }}
         />
       </div>
 
-      {/* Product Details */}
       <div className="product-details">
-        <h3 className="product-name">{name}</h3>
-        
+        <h3 className="product-name">{t(`store.products.${name}`)}</h3>
+
         <div className="product-meta">
-          <span className="product-unit">1 Unit</span>
+        <span className="product-unit">{`1 ${t("item.unit")}`}</span>
           {isLowStock && (
-            <span className="low-stock-warning">Low Stock</span>
+            <span className="low-stock-warning">{t("item.lowStock")}</span>
           )}
         </div>
 
-        {/* Pricing Information */}
         <div className="pricing">
-          {discountValue ? (
+          {discountValue > 0 ? (
             <>
               <span className="original-price">₹{mrp.toFixed(2)}</span>
               <span className="current-price">₹{discountedPrice}</span>
@@ -67,20 +70,18 @@ const NAGsCard = ({
           )}
         </div>
 
-        {/* Stock Status */}
-        <div className={`stock-status ${isOutOfStock ? 'out' : 'in'}`}>
-          {isOutOfStock ? (
-            'Out of Stock'
-          ) : (
-            <>
-              <span className="stock-indicator"></span>
-              {quantityLeft} Available
-            </>
-          )}
-        </div>
+        <div className={`stock-status ${isOutOfStock ? "out" : "in"}`}>
+  {isOutOfStock ? (
+    t("item.outOfStock") // Displays out of stock message
+  ) : (
+    <>
+      <span className="stock-indicator" /> {/* This could be an icon or visual indicator */}
+      {quantityLeft} {t("item.left")} {/* Shows quantity left */}
+    </>
+  )}
 
-        
-        
+
+        </div>
       </div>
     </div>
   );

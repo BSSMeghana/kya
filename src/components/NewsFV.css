@@ -1,0 +1,42 @@
+.news-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fffefc;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-family: 'Georgia', serif;
+  }
+  
+  .news-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px dashed #aaa;
+    padding-bottom: 0.3rem;
+  }
+  
+  .rate-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .rate-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+    font-size: 1rem;
+    color: #333;
+  }
+  
